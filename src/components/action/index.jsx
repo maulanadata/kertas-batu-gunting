@@ -5,6 +5,8 @@ function Action() {
   const choices = ["rock", "paper", "scissors"];
   const [selected, setSelected] = useState("");
   const [computerSelected, setComputerSelected] = useState("");
+  const [selectedScore, setSelectedScore] = useState(0);
+  const [computerScore, setComputerScore] = useState(0);
 
   const play = () => {
     if (!selected) {
@@ -23,8 +25,11 @@ function Action() {
         (computerSelected === "paper" && selected === "rock") ||
         (computerSelected === "scissors" && selected === "paper")
       ) {
+        setComputerScore(computerScore + 1)
         return "Computer won";
+        
       }
+      setSelectedScore(selectedScore + 1)
       return "You won";
     }
   }, [computerSelected, selected]);
@@ -50,6 +55,7 @@ function Action() {
           <div class="card-header mb-2"> Result </div>
           <div class="card-body">
             <button class="btn btn-primary" onClick={play}>play</button>
+            <div className="mt-4"> Score : {selectedScore} - {computerScore} </div>
           </div>
           <div class="card-footer text-muted" id="hasil"> {result} </div>
         </div>
