@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { Row, Col } from "antd";
 import { Typography } from "antd";
 import "antd/dist/antd.css";
@@ -74,13 +74,8 @@ class Controller extends Component {
         return ["l", "w"];
       }
     }
-
-    const choices = ["r", "p", "s"];
-    const [computedSelected, setComputedSelected] = useState("");
-    const computerChoiceIndex = Math.floor(Math.random() * choices.length);
-    setComputedSelected(choices[computerChoiceIndex]);
-
   };
+  
 
   render() {
     return (
