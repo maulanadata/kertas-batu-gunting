@@ -1,19 +1,12 @@
-import React, { Component } from "react";
-import Controller from "./components/controller";
+import  React from 'react';
+import Action from './components/action';
 
-import "./App.css";
+function App(){
+  return(
 
-class App extends Component {
-	render() {
-		return (
-		<div className="App" style={{ backgroundColor:"grey"}}>
-			<div level={3} style={{ textAlign:"center", marginTop:"20px", fontSize:"30px", fontWeight:"bold" }}>
-				Stone Paper Scissor
-			</div>
-			<Controller />
-		</div>
-		);
-	}
+    <Action />
+
+  );
 }
 
 export default App;
